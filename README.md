@@ -6,13 +6,6 @@
 
 > 仓库地址：<https://github.com/XXB473174/my-aicoding-agent>　使用条款见[第 8 节](#8-开源与使用说明)。
 
-课程与部署文档：
-
-- [课程方案](docs/MY_AICODING_COURSE_REBUILD_PLAN.md)
-- [Linux 服务器安装与运行手册](docs/MY_AICODING_LINUX_DEPLOYMENT_RUNBOOK.md)
-- [Agent 运行时与流式事件](docs/MY_AICODING_AGENT_RUNTIME_STREAMING.md)
-- [代码审查子 Agent](docs/MY_AICODING_CODE_REVIEWER_SUBAGENT.md)
-
 ---
 
 ## 1. 项目解决什么问题
@@ -147,7 +140,7 @@ Agent 看到的路径是虚拟路径，实际映射到 `AI_WORKSPACE_ROOT`：
 
 | 依赖 | 要求 |
 |---|---|
-| 操作系统 | Windows 10/11（主要支持）；Linux 见[部署手册](docs/MY_AICODING_LINUX_DEPLOYMENT_RUNBOOK.md) |
+| 操作系统 | Windows 10/11（主要支持）；Linux 可参考 `scripts/start_backend.sh` 与 `.env` 中的 Linux 路径示例 |
 | Python | 3.14+（`pyproject.toml` 声明 `>=3.14`，推荐 3.14） |
 | Node.js | 20.19+ 或 22.12+（Vite 7 要求，推荐 Node.js 22/24） |
 | Git | 已安装并可在命令行使用 |
@@ -735,7 +728,6 @@ scripts/
 ui/                   Vue 3 + Vite 前端
 data/                 SQLite 数据（运行后生成，已忽略）
 logs/                 日志（运行后生成，已忽略）
-docs/                 课程、运行时、审查和部署文档
 ```
 
 ---
@@ -763,16 +755,3 @@ docs/                 课程、运行时、审查和部署文档
 - **请先确认**：转载、二次发布、用于商业用途或对外培训前，请先联系作者。
 - **请勿提交**：`.env`、`Token`、日志、SQLite 数据和个人本机路径。仓库已通过 `.gitignore` 默认忽略这些内容，提交前可用 `git status` 再确认一次。
 - 如果之后要选择正式的开源许可证，可在仓库根目录加入 `LICENSE` 文件（例如 MIT 或 Apache-2.0），并在此处注明。
-
-## 9. 相关文档
-
-- [课程方案](docs/MY_AICODING_COURSE_REBUILD_PLAN.md)
-- [Agent 核心课程](docs/MY_AICODING_AGENT_CORE_COURSE.md)
-- [Agent 运行时与流式事件](docs/MY_AICODING_AGENT_RUNTIME_STREAMING.md)
-- [代码审查子 Agent](docs/MY_AICODING_CODE_REVIEWER_SUBAGENT.md)
-- [Gitee Reviewer API 参考](docs/gitee-reviewer-api-reference.md)
-- [前端环境配置](docs/MY_AICODING_FRONTEND_ENV_SETUP.md)
-- [Linux 服务器安装与运行手册](docs/MY_AICODING_LINUX_DEPLOYMENT_RUNBOOK.md)
-- [云服务器 Docker 部署](docs/MY_AICODING_CLOUD_DOCKER_DEPLOYMENT.md)
-- [Agent 工程问答](docs/MY_AICODING_AGENT_ENGINEERING_QA.md)
-- [Harness Agent 与持续评估问答](docs/MY_AICODING_HARNESS_AGENT_EVAL_QA.md)
