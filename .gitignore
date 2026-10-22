@@ -1,0 +1,51 @@
+# 环境变量与密钥。.env.bak / .env.local 等备份同样含明文密钥，一并忽略。
+.env
+.env.*
+!.env.example
+
+# 日志（含本机绝对路径、历史账号和命令输出）
+logs/
+
+# SQLite 运行时数据。注意同时忽略 -wal / -shm 副本和手工备份，
+# 只写 data/*.sqlite 是拦不住它们的。
+data/*.sqlite
+data/*.sqlite-*
+data/*.sqlite.*
+
+# 运行时数据子目录（历史方案、审查产物等）；data/ 本身保留，用 .gitkeep 占位。
+data/plans/
+
+# Agent 运行时临时工作区，其中 .secrets/ 含 Gitee askpass 凭据脚本。
+.tmp_fetch_url_workspace/
+
+# IDE 与工具本地配置：.idea/deployment.xml 含服务器主机、端口和登录账号，
+# .idea/ 还含本机 SDK 绝对路径；.claude/settings.local.json 记录本机工具权限和路径。
+.idea/
+.claude/
+
+# 根目录临时/备份文件
+*.tmp
+*.bak
+*.orig
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 前端
+ui/node_modules/
+ui/dist/
+ui/.vite/
+ui/.tanstack/tmp/
+ui/tsconfig.tsbuildinfo
+ui/.output/
+
+# Vite 依赖预构建缓存（注意可能在项目根目录生成）
+.vite/
+
+# 系统与工具垃圾文件
+.DS_Store
+Thumbs.db
